@@ -1,9 +1,24 @@
 <script setup>
-import { ref } from "vue";
-import { Button } from "ant-design-vue";
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
+import axios from "axios";
 const router = useRouter();
 const message = ref("Hello World");
+
+const getData = async () => {
+    try {
+        const { data, status } = await axios.get("/api/example");
+        if (status === 200) {
+            // message.value = data.message;
+            console.log("data", data);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+};
+onMounted(() => {
+    getData();
+});
 </script>
 <template>
     <div>
