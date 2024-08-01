@@ -10,8 +10,12 @@ const message = ref("Hello World");
         <h1>Home</h1>
         <p>Welcome to the Home Page</p>
         <h3>{{ message }}</h3>
-        <button @click="router.push('/about')">about page</button>
-        <Button type="primary">Test</Button>
-        <a-button type="primary">Primary Button</a-button>
+        <h1 class="text-3xl font-bold underline">Hello world!</h1>
+        <section class="flex flex-col gap-2">
+            <a-button type="primary" class="w-40" @click="router.push('/about')"
+                >about page
+            </a-button>
+            <a-button type="primary" class="w-40">Primary Button</a-button>
+        </section>
     </div>
 </template>
